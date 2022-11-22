@@ -1,0 +1,7 @@
+# Useful commands
+
+# Watch master event bus
+sudo salt-run state.event pretty=True
+
+# Delete key/s
+salt-key -Dy <name or pattern
