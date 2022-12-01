@@ -1,5 +1,7 @@
 # File: /srv/salt/top.sls
 
 base:
-  'minion*':
-    - setup-files
+  '*':
+    - minion-checkup
+  'deputy-master-minion':
+    - check-job
