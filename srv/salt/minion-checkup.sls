@@ -4,3 +4,10 @@
 check-alive:
   cmd.run:
     - name: "'minion*' test.ping"
+
+
+# prototype, if works, do with salt-ssh
+check-minion:
+  cmd.run:
+    - name: systemctl status salt-minion
+    - onfail: check-alive
