@@ -1,0 +1,9 @@
+# File: /etc/salt/roster
+
+# This file needs to contain the minions managed by salt-ssh
+
+<minion name>:
+  host: <ip address of minion>
+  user: <user to ssh in as>
+  priv: <full path to ssh key for minion>  # eg priv: /home/ubuntu/salt-ssh-key not priv: salt-ssh-key
+  sudo: True
