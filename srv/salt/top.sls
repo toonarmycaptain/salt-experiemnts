@@ -1,7 +1,7 @@
 base:
   'deputy-master-minion':
     - setup-ssh-master-keyfile
-    - ensure-salt-ssh-on-master
+    - salt-ssh-install
   'minion*':
     - setup-ssh-minion-keyfile
     - report-ip
