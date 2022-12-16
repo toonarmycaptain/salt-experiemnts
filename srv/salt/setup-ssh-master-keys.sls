@@ -1,4 +1,4 @@
-# File: setup-ssh-master-keys.sls
+# File: /srv/salt/setup-ssh-master-keys.sls
 
 private_keyfile_exists:
   file.exists:
@@ -15,22 +15,3 @@ create_key:
     - onfail:
       - private_keyfile_exists
       - public_keyfile_exists
-
-
-copy_private_key_to_master
-
-
-# Ensure key map file exists
-key_yaml_created:
-  file.prepend:
-    - name: /srv/salt/public.yaml
-    - text: 'key: |'
-
-
-add_key_to_map_file:
-  file.append:
-    - name: /srv/salt/public.yaml
-    - source: /srv/salt/salt-ssh-key.pub
-    - require:
-      - key_yaml_created
-      - create_key
