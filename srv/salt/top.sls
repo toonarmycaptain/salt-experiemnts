@@ -4,3 +4,4 @@ base:
     - ensure-salt-ssh-on-master
   'minion*':
     - setup-ssh-minion-keyfile
+    - report-ip
