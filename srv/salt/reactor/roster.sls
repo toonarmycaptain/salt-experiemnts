@@ -11,7 +11,7 @@ write-ip:
     - tgt_type: grain
     - args:
       - fun: file.append
-      - name: /srv/salt/test_roster.txt
+      - name: /etc/salt/roster
       - text: "{{ data['id'] }}:\n  host: {{ data['return']['cmd_|-report-ip_|-curl http://ipecho.net/plain_|-run']['changes']['stdout'] }}\n  user: ubuntu\n  priv: /srv/salt/salt-ssh-key  \n  sudo: True\n"
 {% endif %}
 
@@ -23,6 +23,6 @@ write-ip:
     - tgt_type: grain
     - args:
       - fun: file.append
-      - name: /srv/salt/test_roster.txt
+      - name: /etc/salt/roster
       - text: "{{ data['id'] }}:\n  host: {{ data['return']['cmd_|-curl http://ipecho.net/plain_|-curl http://ipecho.net/plain_|-run']['changes']['stdout'] }}\n  user: ubuntu\n  priv: /srv/salt/salt-ssh-key  \n>
 {% endif %}
