@@ -2,7 +2,7 @@
 
 # File: /srv/reactor/minion-auth.sls
 
-{% if 'act' in data and data['act'] == 'accept' and data['id'].startswith('minion') %}
+{% if data.get('act') == 'accept' and data['id'].startswith('minion') %}
 add_key_to_authorized_keys:
   local.state.single:
     - tgt: id:{{ data['id'] }}
